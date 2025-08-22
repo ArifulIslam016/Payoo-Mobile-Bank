@@ -8,7 +8,7 @@ document.getElementById("loginBtn").addEventListener("click", function (eo) {
   const convertedPinNo = parseInt(pinNo);
   console.log(convertedPhoneNo, convertedPinNo);
   if (userPhone === convertedPhoneNo && userPin === convertedPinNo) {
-    console.log("login suceed");
+    window.location.href = "./home.html";
   } else {
     alert("Invalid Credintial");
   }
