@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payoo Bank</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body
+    class="bg-gray-200 flex flex-col justify-center items-center h-screen w-screen mx-auto my-auto"
+  >
+    <div
+      class="h-[120px] w-[316px] bg-[url('./assets/bg.png')] bg-cover flex items-center justify-center"
+    >
+      <img src="./assets/Group.png" alt="" class="" />
+    </div>
+    <div class="w-[402px] mx-auto mt-0">
+      <form class="w-full p-8 bg-white rounded-xl" action="">
+        <div class="w-full">
+          <label class="font-medium text-lg text-[#080808]"
+            >Mobile Number</label
+          >
+          <br />
+          <input
+            class="input rounded-3xl p-2 mt-3 mb-4"
+            type="text"
+            placeholder="Enter Phone No"
+          />
+        </div>
+        <div>
+          <label class="font-medium text-lg text-[080808]"
+            >Four Digit Pin</label
+          >
+          <br />
+          <input
+            class="input rounded-3xl p-2 mt-3 mb-4"
+            type="text"
+            placeholder="Enter Your Pin"
+          />
+        </div>
+        <button
+          id="loginBtn"
+          class="btn bg-[#0874F2] rounded-3xl text-center text-white w-full"
+        >
+          Login
+        </button>
+      </form>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
