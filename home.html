@@ -21,7 +21,7 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
-  <body class="bg-gray-200">
+  <body class="bg-gray-200 h-screen">
     <!-- nav starts here -->
     <div
       class="navbar top-1 max-w-[440px] mx-auto p-4 border-b-2 border-[#0808087c] flex justify-between items-center"
@@ -41,7 +41,7 @@
       </div>
     </div>
     <!-- intro starts here -->
-    <div class="intro max-w-[440px] mx-auto my-8">
+    <div class="intro max-w-[440px] mx-auto my-8 px-3">
       <h1 class="font-bold text-[#080808] text-xl">
         <i
           class="fa-solid fa-fire mr-1 bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400 bg-clip-text text-transparent"
@@ -56,7 +56,7 @@
     </div>
     <!-- Fretures starts here -->
 
-    <div class="max-w-[440px] mx-auto grid grid-cols-3 gap-4 px-1">
+    <div class="max-w-[440px] mx-auto grid grid-cols-3 gap-4 px-3">
       <div class="item text-center bg-white rounded-lg py-5 px-7">
         <img class="mx-auto" src="./assets/wallet1.png" alt="add money image" />
         <h2 class="text-[#080808c4] text-[14px] text[#080808c2]">Add Money</h2>
@@ -91,5 +91,48 @@
         </h2>
       </div>
     </div>
+     <div class="max-w-[440px] mx-auto px-3 mt-9"><h1 class="font-semibold text-lg text-[#080808] mb-4">Add money</h1></div>
+    <!-- add money section -->
+    <section class="max-w-[440px] mx-auto px-3 py-4 mt-4  bg-white rounded-xl">
+     
+     <div class=""> <form action="" class="">
+        <label for="" class="font-medium text-[16px]   mb-3">Select a Bank</label>
+        <select class="select w-full rounded-3xl mb-4">
+          <option disabled selected>Select a Bank</option>
+          <option>Dutch Bangla Bank</option>
+          <option>Islami Bank Bangladesh</option>
+          <option>IFIC Bank</option>
+        </select>
+        <div>
+          <label class="mt-4" for="">Bank Account Number</label>
+          <input
+            class="input rounded-3xl p-2 mt-3 mb-4 w-full"
+            type="text"
+            placeholder="Enter 11 digit Number"
+          />
+        <div>
+          <label class="mt-4" for="">Amount to Add</label>
+          <input
+            class="input rounded-3xl p-2 mt-3 mb-4 w-full"
+            type="text"
+            placeholder="Add Amount to withdraw"
+          />
+        </div>
+        <div>
+          <label class="mt-4" for="">Pin Number</label>
+          <input
+            class="input rounded-3xl p-2 mt-3 mb-4 w-full"
+            type="text"
+            placeholder="Enter 4 digit pin number"
+          />
+        </div>
+         <button
+          id="loginBtn"
+          class="btn bg-[#0874F2] rounded-3xl text-center text-white w-full"
+        >
+         ADD Money
+        </button>
+      </form></div>
+    </section>
   </body>
 </html>
