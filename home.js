@@ -1,14 +1,27 @@
+// Global sections
 const pinNo = 1234;
-
+// function to get integer value by id
 function getNumberValue(id) {
   const numberValue = parseInt(document.getElementById(id).value);
   return numberValue;
 }
+// function to get value from input by id
 function getValue(id) {
   const numberValue = document.getElementById(id).value;
   return numberValue;
 }
 
+// function to get inner text as a integer
+function getInnerTextASNumber(id) {
+  const innerTextValue = parseInt(document.getElementById(id).innerText);
+  return innerTextValue;
+}
+//  function to set inner text by valu in js
+function setInnerTextInMainBalance(value) {
+  document.getElementById("main-balance").innerText = value;
+}
+
+// main functionality starts from here
 document
   .getElementById("add-money-btn")
   .addEventListener("click", function (e) {
@@ -17,9 +30,7 @@ document
     const bankAcNO = getValue("bank-ac-no");
     const amount = getNumberValue("amount-to-add");
     const pin = getNumberValue("pin-no");
-    const mainBalance = parseInt(
-      document.getElementById("main-balance").innerText
-    );
+    const mainBalance = getInnerTextASNumber("main-balance");
     // if (selectedBank === " ") {
     //   alert("Please Select a bank");
     //   return;
@@ -33,7 +44,7 @@ document
       return;
     }
     const totalBalance = amount + mainBalance;
-    document.getElementById("main-balance").innerText = totalBalance;
+    setInnerTextInMainBalance(totalBalance);
   });
 
 // CashOut form funtionality
@@ -52,9 +63,7 @@ document.getElementById("cashOut-btn").addEventListener("click", function (E) {
     return;
   }
 
-  const mainBalance = parseInt(
-    document.getElementById("main-balance").innerText
-  );
+  const mainBalance = getInnerTextASNumber("main-balance");
   console.log(mainBalance);
 
   const newBalance = mainBalance - withDrawAmount;
