@@ -1,13 +1,22 @@
 const pinNo = 1234;
 
+function getNumberValue(id) {
+  const numberValue = parseInt(document.getElementById(id).value);
+  return numberValue;
+}
+function getValue(id) {
+  const numberValue = document.getElementById(id).value;
+  return numberValue;
+}
+
 document
   .getElementById("add-money-btn")
   .addEventListener("click", function (e) {
     e.preventDefault();
-    const selectedBank = document.getElementById("selected-bank").value;
-    const bankAcNO = document.getElementById("bank-ac-no").value;
-    const amount = parseInt(document.getElementById("amount-to-add").value);
-    const pin = parseInt(document.getElementById("pin-no").value);
+    const selectedBank = getValue("selected-bank");
+    const bankAcNO = getValue("bank-ac-no");
+    const amount = getNumberValue("amount-to-add");
+    const pin = getNumberValue("pin-no");
     const mainBalance = parseInt(
       document.getElementById("main-balance").innerText
     );
@@ -30,11 +39,10 @@ document
 // CashOut form funtionality
 document.getElementById("cashOut-btn").addEventListener("click", function (E) {
   E.preventDefault();
-  const agentNo = document.getElementById("agent-no").value;
-  const withDrawAmount = parseInt(
-    document.getElementById("amount-to-withdraw").value
-  );
-  const pinNumber = document.getElementById("pin-number").value;
+  const agentNo = getValue("agent-no");
+  const withDrawAmount = getNumberValue("amount-to-withdraw");
+  const pinNumber = getNumberValue("pin-number");
+
   if (agentNo.length !== 11) {
     alert("Provide a vaid Agent Number");
     return;
