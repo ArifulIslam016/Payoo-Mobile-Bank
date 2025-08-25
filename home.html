@@ -68,18 +68,18 @@
         <h2 class="text-[#080808c4] text-[14px] text[#080808c2]">Cashout</h2>
       </div>
 
-      <div class="item text-center bg-white rounded-lg py-5 ">
+      <div id="transfer-p-btn" class="item text-center bg-white rounded-lg py-5 ">
         <img class="mx-auto" src="./assets/money1.png" alt="add money image" />
         <h2 class="text-[#080808c4] text-[14px] text[#080808c2]">
           Transfer Money
         </h2>
       </div>
 
-      <div class="item text-center bg-white rounded-lg py-5 ">
+      <div id="bonus-p-btn" class="item text-center bg-white rounded-lg py-5 ">
         <img class="mx-auto" src="./assets/bonus1.png" alt="add money image" />
         <h2 class="text-[#080808c4] text-[14px] text[#080808c2]">Get Bonus</h2>
       </div>
-      <div class="item text-center bg-white rounded-lg py-5 ">
+      <div id="bill-btn" class="item text-center bg-white rounded-lg py-5 ">
         <img class="mx-auto" src="./assets/purse1.png" alt="add money image" />
         <h2 class="text-[#080808c4] text-[14px] text[#080808c2]">Pay Bill</h2>
       </div>
@@ -96,7 +96,7 @@
     </div>
     
     <!-- add money section -->
-    <div id="addMoney-form-parent">
+    <div id="addMoney-form-parent" class="form">
        <div class="max-w-[440px] mx-auto px-3 mt-9"><h1 class="font-semibold text-lg text-[#080808] mb-4">Add money</h1></div>
           <section class="max-w-[440px] mx-auto px-3 py-4 mt-4  bg-white rounded-xl" id="add-form">
      
@@ -144,7 +144,8 @@
     </section>
     </div>
     <!-- cash out Section -->
-   <div id="CashOut-form-parent" style="display: none;" >
+   <div id="CashOut-form-parent" style="display: none;"
+   class="form" >
       <div class="max-w-[440px] mx-auto px-3 mt-9"><h1 class="font-semibold text-lg text-[#080808] mb-4">Cash Out</h1></div>
     <section class="max-w-[440px] mx-auto px-3 py-4 mt-4  bg-white rounded-xl" >
        <div class="">
@@ -186,6 +187,103 @@
     </div>
   </section>
    </div>
+   
+
+   <!-- Transfer money section -->
+    <div id="transfer-form-parent" style="display: none;" class="form" >
+      <div class="max-w-[440px] mx-auto px-3 mt-9"><h1 class="font-semibold text-lg text-[#080808] mb-4">Transfer Money</h1></div>
+    <section class="max-w-[440px] mx-auto px-3 py-4 mt-4  bg-white rounded-xl" >
+       <div class="">
+         <form action="" class="">
+        
+        <div>
+          <label class="mt-4" for="">User Account Number</label>
+          <input
+          id="user-ac-no"
+            class="input rounded-3xl p-2 mt-3 mb-4 w-full"
+            type="text"
+            placeholder="Enter 11 digit Number"
+          />
+        <div>
+          <label class="mt-4" for="">Amount</label>
+          <input
+          id="amount-to-transfer"
+            class="input rounded-3xl p-2 mt-3 mb-4 w-full"
+            type="text"
+            placeholder="Add Amount to withdraw"
+          />
+        </div>
+        <div>
+          <label class="mt-4" for="">Pin Number</label>
+          <input
+          id="pin-number-transfer"
+            class="input rounded-3xl p-2 mt-3 mb-4 w-full"
+            type="text"
+            placeholder="Enter 4 digit pin number"
+          />
+        </div>
+         <button
+          id="transfer-btn"
+          class="btn bg-[#0874F2] rounded-3xl text-center text-white w-full"
+        >
+        Send Now
+        </button>
+      </form>
+    </div>
+  </section>
+</div>
+<!-- Get Bonus Section -->
+  <div id="bonus-form-parent" style="display: none;" class="form" >
+      <div class="max-w-[440px] mx-auto px-3 mt-9"><h1 class="font-semibold text-lg text-[#080808] mb-4">Get Bonus</h1></div>
+    <section class="max-w-[440px] mx-auto px-3 py-4 mt-4  bg-white rounded-xl" >
+       <div class="">
+         <form action="" class="">
+        
+        <div>
+          <label class="mt-4" for="">Enter Bonus Coupon</label>
+          <input
+          id="bonus-cupon"
+            class="input rounded-3xl p-2 mt-3 mb-4 w-full"
+            type="text"
+            placeholder="Enter your coupon"
+          />
+        
+         <button
+          id="get-bonus-btn"
+          class="btn bg-[#0874F2] rounded-3xl text-center text-white w-full"
+        >
+        Get Bonus
+        </button>
+      </form>
+    </div>
+  </section>
+</div>
+ <div id="Pay-bill-parrent" style="display: none;" class="form" >
+      <div class="max-w-[440px] mx-auto px-3 mt-9"><h1 class="font-semibold text-lg text-[#080808] mb-4">Bill Pay</h1></div>
+    <section class="max-w-[440px] mx-auto px-3 py-4 mt-4  bg-white rounded-xl" >
+      <h1>Service not Available Now</h1>
+       <!-- <div class="">
+         <form action="" class="">
+        
+        <div>
+          <label class="mt-4" for="">Service not Availabe Now</label> -->
+          <!-- <input
+          id="bonus-cupon"
+            class="input rounded-3xl p-2 mt-3 mb-4 w-full"
+            type="text"
+            placeholder="Enter your coupon"
+          />
+        
+         <button
+          id="get-bonus-btn"
+          class="btn bg-[#0874F2] rounded-3xl text-center text-white w-full"
+        >
+        Pay
+        </button> -->
+      </form>
+    </div>
+  </section>
+</div>
     <script src="home.js"></script>
   </body>
 </html>

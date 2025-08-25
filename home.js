@@ -1,5 +1,6 @@
 // Global sections
 const pinNo = 1234;
+bonusCuponCon = 2025;
 // function to get integer value by id
 function getNumberValue(id) {
   const numberValue = parseInt(document.getElementById(id).value);
@@ -21,6 +22,14 @@ function setInnerTextInMainBalance(value) {
   document.getElementById("main-balance").innerText = value;
 }
 
+// shared function to togggole
+function featureToggle(id) {
+  const forms = document.getElementsByClassName("form");
+  for (const form of forms) {
+    form.style.display = "none";
+  }
+  document.getElementById(id).style.display = "block";
+}
 // main functionality starts from here
 document
   .getElementById("add-money-btn")
@@ -67,16 +76,80 @@ document.getElementById("cashOut-btn").addEventListener("click", function (E) {
   console.log(mainBalance);
 
   const newBalance = mainBalance - withDrawAmount;
-  document.getElementById("main-balance").innerText = newBalance;
+  setInnerTextInMainBalance(newBalance);
 });
 
-//  togoling feature
+//transfer money functionality
+document
+  .getElementById("transfer-btn")
+  .addEventListener("click", function (Tr) {
+    Tr.preventDefault();
+
+    const userACNO = getValue("user-ac-no");
+    const transferAmount = getNumberValue("amount-to-transfer");
+    const pinforTransfer = getNumberValue("pin-number-transfer");
+    if (userACNO.length !== 11) {
+      alert("User not find");
+      return;
+    }
+    if (pinforTransfer !== pinNo) {
+      alert("Please provide a valid pin");
+    }
+    const tranferBeforBalance = getInnerTextASNumber("main-balance");
+    const netBalance = tranferBeforBalance - transferAmount;
+    setInnerTextInMainBalance(netBalance);
+  });
+
+// Get bonus Functionality
+// *****************Not Need
+document
+  .getElementById("get-bonus-btn")
+  .addEventListener("click", function (bonus) {
+    bonus.preventDefault();
+    const bonusCupon = getNumberValue("bonus-cupon");
+    if (bonusCupon !== bonusCuponCon) {
+      alert("Your are not eligible for this offer");
+      return;
+    }
+    const wihoutBonusBalance = getInnerTextASNumber("main-balance");
+    console.log(wihoutBonusBalance);
+    const withBonusBalance = wihoutBonusBalance + 726;
+    console.log(withBonusBalance);
+    setInnerTextInMainBalance(withBonusBalance);
+    this.setAttribute("disabled", true);
+  });
+// **************************************
+
+//  toggoling feature******************
+// addmoney toggoling
 document.getElementById("add-btn").addEventListener("click", function () {
-  document.getElementById("CashOut-form-parent").style.display = "none";
-  document.getElementById("addMoney-form-parent").style.display = "block";
+  // document.getElementById("CashOut-form-parent").style.display = "none";
+  // document.getElementById("addMoney-form-parent").style.display = "block";
+  // // document.getElementById("transfer-form-parent").style.display = "none";
+  // const forms = document.getElementsByClassName("form");
+  // for (const form of forms) {
+  //   form.style.display = "none";
+  //   document.getElementById("addMoney-form-parent").style.display = "block";
+  // }
+  featureToggle("addMoney-form-parent");
 });
 
+// cashout toggling
 document.getElementById("Cout-btn").addEventListener("click", function () {
-  document.getElementById("addMoney-form-parent").style.display = "none";
-  document.getElementById("CashOut-form-parent").style.display = "block";
+  featureToggle("CashOut-form-parent");
 });
+//  transfer toggoling
+document
+  .getElementById("transfer-p-btn")
+  .addEventListener("click", function () {
+    featureToggle("transfer-form-parent");
+  });
+
+document.getElementById("bonus-p-btn").addEventListener("click", function () {
+  featureToggle("bonus-form-parent");
+});
+ 
+// pay bill toggiling
+document.getElementById("bill-btn").addEventListener("click", function(){
+  featureToggle("Pay-bill-parrent");
+})
