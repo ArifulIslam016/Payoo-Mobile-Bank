@@ -30,7 +30,24 @@ function featureToggle(id) {
   }
   document.getElementById(id).style.display = "block";
 }
-// main functionality starts from here
+
+function styleToggle(id) {
+  const buttons = document.getElementsByClassName("container-btn");
+  console.log(buttons);
+  for (const button of buttons) {
+    button.classList.remove(
+      "bg-[#229BFF]",
+      "bg-[#A9D5F9]",
+      "border-2",
+      "border-[#229BFF]"
+    );
+    button.classList.add("bg-white");
+  }
+  const newbutton = document.getElementById(id);
+  newbutton.classList.remove("bg-white");
+  newbutton.classList.add("bg-[#A9D5F9]", "border-2", "border-[#229BFF]");
+}
+// main functionality starts from here************************************************
 document
   .getElementById("add-money-btn")
   .addEventListener("click", function (e) {
@@ -132,24 +149,29 @@ document.getElementById("add-btn").addEventListener("click", function () {
   //   document.getElementById("addMoney-form-parent").style.display = "block";
   // }
   featureToggle("addMoney-form-parent");
+  styleToggle("add-btn");
 });
 
 // cashout toggling
 document.getElementById("Cout-btn").addEventListener("click", function () {
   featureToggle("CashOut-form-parent");
+  styleToggle("Cout-btn");
 });
 //  transfer toggoling
 document
   .getElementById("transfer-p-btn")
   .addEventListener("click", function () {
     featureToggle("transfer-form-parent");
+    styleToggle("transfer-p-btn");
   });
 
 document.getElementById("bonus-p-btn").addEventListener("click", function () {
   featureToggle("bonus-form-parent");
+  styleToggle("bonus-p-btn");
 });
- 
+
 // pay bill toggiling
-document.getElementById("bill-btn").addEventListener("click", function(){
+document.getElementById("bill-btn").addEventListener("click", function () {
   featureToggle("Pay-bill-parrent");
-})
+  styleToggle("bill-btn");
+});
