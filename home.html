@@ -83,13 +83,14 @@
         <img class="mx-auto" src="./assets/purse1.png" alt="add money image" />
         <h2 class="text-[#080808c4] text-[14px] text[#080808c2]">Pay Bill</h2>
       </div>
-      <div class="item text-center bg-white rounded-lg py-5 ">
+      <!-- transactions -->
+      <div id="transaction-btn" class="container-btn item text-center bg-white rounded-lg py-5 ">
         <img
           class="mx-auto"
           src="./assets/transaction1.png"
-          alt="add money image"
+          alt="transiction image"
         />
-        <h2 class="container-btn text-[#080808c4] text-sm text[#080808c2]">
+        <h2 class=" text-[#080808c4] text-sm text[#080808c2]">
           Transactions
         </h2>
       </div>
@@ -284,6 +285,16 @@
     </div>
   </section>
 </div>
+<!-- Transaction section -->
+  <div id="transaction-parrent" style="display: none;" class="form" >
+      <div class="max-w-[440px] mx-auto px-3 mt-9 flex justify-between items-center">
+        <h1 class="font-semibold text-lg text-[#080808] mb-4">
+        Latest Payment</h1>
+        <p class="text-[#08080875] text-sm">View All</p>
+      </div>
+      <div id="transaction-container">
+
+      </div>
     <script src="home.js"></script>
   </body>
 </html>

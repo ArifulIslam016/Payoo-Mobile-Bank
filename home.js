@@ -1,6 +1,8 @@
 // Global sections
 const pinNo = 1234;
 bonusCuponCon = 2025;
+const transactionData = [];
+console.log(transactionData);
 // function to get integer value by id
 function getNumberValue(id) {
   const numberValue = parseInt(document.getElementById(id).value);
@@ -71,6 +73,12 @@ document
     }
     const totalBalance = amount + mainBalance;
     setInnerTextInMainBalance(totalBalance);
+    const data = {
+      name: "Add Money",
+      Date: new Date().toLocaleDateString(),
+    };
+    transactionData.push(data);
+    console.log(transactionData);
   });
 
 // CashOut form funtionality
@@ -94,6 +102,13 @@ document.getElementById("cashOut-btn").addEventListener("click", function (E) {
 
   const newBalance = mainBalance - withDrawAmount;
   setInnerTextInMainBalance(newBalance);
+  // const totalBalance = amount + mainBalance;
+  // setInnerTextInMainBalance(totalBalance);
+  const data = {
+    name: "Cash Out",
+    Date: new Date().toLocaleDateString(),
+  };
+  transactionData.push(data);
 });
 
 //transfer money functionality
@@ -115,6 +130,11 @@ document
     const tranferBeforBalance = getInnerTextASNumber("main-balance");
     const netBalance = tranferBeforBalance - transferAmount;
     setInnerTextInMainBalance(netBalance);
+    const data = {
+      name: "Transfer Money",
+      Date: new Date().toLocaleDateString(),
+    };
+    transactionData.push(data);
   });
 
 // Get bonus Functionality
@@ -134,6 +154,39 @@ document
     console.log(withBonusBalance);
     setInnerTextInMainBalance(withBonusBalance);
     this.setAttribute("disabled", true);
+
+    const data = {
+      name: "Bonus",
+      Date: new Date().toLocaleDateString(),
+    };
+    transactionData.push(data);
+  });
+
+document
+  .getElementById("transaction-btn")
+  .addEventListener("click", function () {
+    const newTransactionParent = document.getElementById(
+      "transaction-container"
+    );
+    newTransactionParent.innerText = "";
+    for (const datal of transactionData) {
+      const newDatas = document.createElement("div");
+      newDatas.innerHTML = ` <section class="max-w-[440px] mx-auto px-3 py-4   bg-white rounded-xl mt-2" >
+    <div class="flex justify-between items-center">
+    <div class="flex text-[#0808089d]">
+      <img  class="bg-gray-200 rounded-full  p-3" src="./assets/wallet1.png" alt="image of wallet">
+     <div class="ml-3">
+        <h1 class="text-lg">${datal.name}</h1>
+      <p class="text-sm">${datal.Date}</p>
+    </div>
+    </div>
+    <p><i class="fa-solid fa-ellipsis-vertical"></i></p>
+    </div>
+    </section>`;
+      newTransactionParent.appendChild(newDatas);
+    }
+
+    console.log(transactionData);
   });
 // **************************************
 
@@ -175,3 +228,9 @@ document.getElementById("bill-btn").addEventListener("click", function () {
   featureToggle("Pay-bill-parrent");
   styleToggle("bill-btn");
 });
+document
+  .getElementById("transaction-btn")
+  .addEventListener("click", function () {
+    featureToggle("transaction-parrent");
+    styleToggle("transaction-btn");
+  });
